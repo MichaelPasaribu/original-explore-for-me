@@ -2,7 +2,7 @@
 @section('title', 'Cerpen & Novel')
 
 @section('content')
-<h1 class="page-title">📖 Cerpen &amp; Novel</h1>
+<h1 class="page-title">Cerpen &amp; Novel</h1>
 
 <div class="filters">
     <a href="{{ route('stories.index') }}" class="chip {{ request('type') ? '' : 'active' }}">Semua</a>
@@ -10,8 +10,9 @@
     <a href="{{ route('stories.index', ['type' => 'novel']) }}" class="chip {{ request('type') === 'novel' ? 'active' : '' }}">Novel</a>
 </div>
 
-<div class="cards">
-    @forelse($stories as $story)
+<div class="scroll-area">
+    <div class="cards">
+        @forelse($stories as $story)
         <a href="{{ route('stories.show', $story) }}" class="card story-card">
             @if($story->cover_path)
                 <img src="{{ asset($story->cover_path) }}" alt="{{ $story->title }}" class="story-cover">
@@ -26,7 +27,8 @@
             </div>
         </a>
     @empty
-        <p class="muted">Belum ada karya yang dipublikasikan.</p>
-    @endforelse
+            <p class="muted">Belum ada karya yang dipublikasikan.</p>
+        @endforelse
+    </div>
 </div>
 @endsection

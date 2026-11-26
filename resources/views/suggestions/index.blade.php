@@ -2,7 +2,7 @@
 @section('title', 'Saran & Masukan')
 
 @section('content')
-<h1 class="page-title">💬 Saran &amp; Masukan</h1>
+<h1 class="page-title">Saran &amp; Masukan</h1>
 
 <div class="grid-2">
     <form method="POST" action="{{ route('suggestions.store') }}" class="card form" data-pjax>

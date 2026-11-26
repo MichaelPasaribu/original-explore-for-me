@@ -142,11 +142,11 @@
         return c;
     }
 
-    const bands = [
-        { rgb: '126,240,176', y: .40, amp: .10, h: .34, s1: .30, s2: .20 }, // hijau
-        { rgb: '111,227,214', y: .46, amp: .08, h: .28, s1: .22, s2: .28 }, // teal
-        { rgb: '180,163,255', y: .34, amp: .12, h: .30, s1: .26, s2: .18 }, // ungu
-        { rgb: '242,184,255', y: .42, amp: .09, h: .22, s1: .34, s2: .24 }, // merah muda
+        const bands = [
+        { rgb: '126,240,176', y: .24, amp: .06, h: .22, s1: .30, s2: .20 }, // hijau
+        { rgb: '111,227,214', y: .29, amp: .05, h: .18, s1: .22, s2: .28 }, // teal
+        { rgb: '180,163,255', y: .20, amp: .07, h: .20, s1: .26, s2: .18 }, // ungu
+        { rgb: '242,184,255', y: .26, amp: .05, h: .15, s1: .34, s2: .24 }, // merah muda
     ].map((b) => ({
         ...b, img: makeStrip(b.rgb),
         p1: Math.random() * 6.28, p2: Math.random() * 6.28,
@@ -212,7 +212,7 @@
             b.shift += (b.shiftT - b.shift) * k * 0.3;
 
             const en = bandEnergy[i];
-            cx.globalAlpha = Math.min(1, 0.5 + en * 0.6);
+                cx.globalAlpha = Math.min(0.85, 0.38 + en * 0.45);
 
             for (let x = 0; x < W; x += 2) {
                 const nx = x / W;
